@@ -1,0 +1,44 @@
+Recuento de login en Angular.
+
+* Se crean las siguientes carpetas dentro de la carpeta principal "app"
+
+* Se crea carpeta "shared" alli se crearan parte del cuerpo de la pagina como lo es "header", "footer" y "nav".
+
+* Se crea carpeta de "pages" alli se contendran los accesos a los diferentes dashboard.
+
+Se crea carpeta "auth" alli se contendra la carpeta "login" donde se almacenara el componente "login"
+
+* Se instala libreria de bootstrap [npm install bootstrap jquery @popperjs/core]
+
+* Se integra en el archivo "angula.json" en la seccion "Styles" la siguiente linea:  "node_modules/bootstrap/dist/css/bootstrap.min.css" y en la seccion de "Sripts" las siguientes: "node_modules/jquery/dist/jquery.min.js", "node_modules/@popperjs/core/dist/umd/popper.min.js","node_modules/bootstrap/dist/js/bootstrap.min.js"
+
+* Se organiza cargue iniciales del programa en el archivo "app.component.html", alli normalmente ira el "app-header" y app-footer. Entre los dos anteriores va el enrutamiento el cual permite el cargue inicial de compoenentes y nombramiento para poderse direccionar esto atraves del archivo "app-component.ts".
+
+* Se realiza la configuracion del diseño de cada componente
+
+* En lo botones o enlaces de una lista se añade la etiqueta "routeLink="['aqui va el nombre del path se le dio al componente que queremos llamar al presionar click]"
+
+* la etiqueta o llamado "*ngIf="[Aqui va el nombre de la variable que se nombro en el archivo app-(el mismo componente).ts en la seccion de "export class"]
+
+* En los cortes de validacion del codigo en HTML se deben crear clases en el archivo .ts del mismo compoenente para poderlos llamar sin tanto texto. Estos metodos llaman a las variables de "username" y "password" declaradas alli con sus datos.
+
+* Se crea componente "service" de la funcionalidad de "login" para alli poder crear un breve repository y llamar los datos de una entidad que en este caso sera "user.ts" el cual se validara en el archivo "data.json" creado para tener datos de prueba.
+
+* El manejador de errore mostraran errores de logica y/o ubicacion dentro del mismo codigo.
+
+* Se crea metodo de "login" donde se validara.
+
+*************************************IMPLEMENTACION DE SEGURIDAD SPRINGBOOT ****************************************************
+* Instalacion de de libreria en archivo "pom" <groupId -> org.springframework.boot con artifacId -> spring-boot-starte-security
+[Su funcion es bloquear todas las solicitudes que se puedan hacer por URL's]
+
+*Para implementar un escenario de Spring Secutorty donde se valide el ingreso a Login por varios filtros podemos
+escribir la siguiente linea en el archivo de "Aplication.properties" 'loggin.level.org.springframework.security=TRACE'
+
+* Para controlar los bloqueos a la direcciones podemos crear un paquete que se encargue de especificar estas configuracion y seleccionar o discrimar que
+sitios bloquea y que sitios no.
+
+**********************************IMPLEMENTACION DE SEGURIDAD JWT********************************************
+
+* Se crean paquetes "Auth" para controlar las aceptaciones de las solicitudes.
+
