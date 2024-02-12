@@ -1,0 +1,45 @@
+<form [formGroup]="loginForm">
+  <p class="text-danger">{{ loginError }}</p>
+  <div class="login-container" style="border-radius: 40px; padding: 0.9rem; background: #EFFFE6 linear-gradient(180deg, rgba(0, 0, 0, 0), #ffffff);">
+    <div class="w-full surface-card py-1 px-1 sm:px-8" style="border-radius:10px">
+
+      <div class="mb-3">
+        <input formControlName="userDoc" type="number" class="form-control campoentradaNombre" placeholder="Numero de documento" id="exampleInputEmail1" style="-webkit-appearance: none; -moz-appearance: textfield;">
+        <!--<div id="emailHelp" class="form-text">Tu informacion es confidencial</div>-->
+      </div>
+ <!-- ******************************SECCION DE VALIDACION**********************************-->
+        <div
+        *ngIf="userDoc.invalid && (userDoc.dirty || userDoc.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="userDoc.errors?.['required']">Documento requerido</div>
+        <!--<div *ngIf="userDoc.errors?.['userDoc']">
+          ¡No escribiste tu numero de documento!
+        </div>-->
+<!--******************************************************************************************-->
+
+
+      </div>
+      <div class="mb-3">
+        <input formControlName="password" type="password" class="form-control campoentradaContrasena" id="exampleInputPassword1" placeholder="Contraseña" >
+      </div>
+<!-- ******************************SECCION DE VALIDACION**********************************-->
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="password.errors?.['required']">La contraseña es requerida</div>
+        <!--<div *ngIf="userDoc.errors?.['userDoc']">
+          ¡No escribiste tu numero de documento!
+        </div>-->
+<!--******************************************************************************************-->
+
+      </div>
+
+      <button type="submit" (click)="login()" class="btn btn-success btns_inicio_sesion " >Inicia sesion</button>
+      <button type="submit" class="btn btn-success btns_inicio_sesion">Registrate</button>
+      <button type="submit" class="btn btn-success btns_inicio_sesion" routerLink="/inicio">Cancelar</button>
+    </div>
+    </div>
+
+</form>

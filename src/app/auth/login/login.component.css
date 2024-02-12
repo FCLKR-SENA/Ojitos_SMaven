@@ -1,0 +1,38 @@
+.btns_inicio_sesion {
+  background-color: #027d00; /* Cambia este valor al color que desees */
+  border-color: #0000; /* Cambia este valor al color que desees */
+  color: #ffffff; /* Cambia este valor al color que desees */
+  margin-top: 2%;
+  width: 100%;
+}
+
+input:focus{
+  border-color: #027d00;
+}
+
+/* Estilo para ocultar las flechas de aumento y disminución en un input de tipo number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* opcional: quita el espacio adicional que queda cuando se ocultan las flechas */
+}
+
+form{
+  margin:40%;
+  margin-top:3%;
+
+}
+
+.campoentradaNombre{
+  width: 100%;
+  box-shadow: #027d00;
+}
+
+.campoentradaContrasena{
+  width: 100%;
+}
+
+.login-container{
+  width: 100%;
+}
+
